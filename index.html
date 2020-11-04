@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Pagina de javascript</title>
+<link rel="stylesheet" href="css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<h1 align="center" style="color: blue">Ingrese las caracteristicas del auto</h1>		
+</section>
+</section>
+
+<div id="main">
+<article class="post">
+<div align="center">
+<form>
+		<input placeholder="Nombre" type="text" id="nombre"  name="nombre">
+		<input placeholder="Marca" type="text" id="marca"  name="marca">
+		<input placeholder="Color" type="text" id="color"  name="color">
+		<input placeholder="Año" type="text" id="año"  name="año">
+</form>
+<br>
+<br>
+<input type="button" name="botón" value="Ingresar Auto" onclick="agregar();">
+<input type="button" name="botón" value="Mostrar auto" onclick="mostrar();">
+<br>
+<br>
+
+	<p id="lista"></p> 
+
+<script type="text/javascript">
+
+var TODO = [];
+
+function agregar(){
+
+var a = document.getElementById("nombre").value;
+var b = document.getElementById("año").value;
+var c = document.getElementById("marca").value;
+var d = document.getElementById("color").value;
+
+if (a == "" ||  b == "" || c == "" || d == ""  ){
+
+alert("Faltó ingresar algún valor, vuelve a intentarlo")
+
+}else{
+	var auto = {nombre: "Modelo: " + a, año: "Año: "+ b, marca: "Marca: "+ c, color:"Color: " + d + "<br>"};
+
+	TODO.push(Object.values(auto));
+
+	document.getElementById("nombre").value = "";
+	document.getElementById("año").value = "";
+	document.getElementById("marca").value = "";
+	document.getElementById("color").value = "";
+}
+}
+
+function mostrar(){
+
+if (TODO.length == ""){
+
+	alert("No hay ningun auto ingresado")
+
+}else{
+
+	document.getElementById("lista").innerHTML = "<p>" + TODO + "</p>" + "<br>";
+
+}
+}
+
+</script>
+
+</div>
+</article>
+</div>	
+</body>
+</html>
+
